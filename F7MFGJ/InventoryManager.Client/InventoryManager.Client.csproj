@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\F7MFGJ\InventoryManager.Core.csproj" />
+    <ProjectReference Include="..\InventoryManager.Core\InventoryManager.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="../InventoryManager.Client/InventoryManager.Client.csproj" Id="f072fb8b-2b12-4684-815f-ee572b4486af" />
-  <Project Path="InventoryManager.Core.csproj" />
+  <Project Path="InventoryManager.Client/InventoryManager.Client.csproj" />
+  <Project Path="InventoryManager.Core/InventoryManager.Core.csproj" />
 </Solution>

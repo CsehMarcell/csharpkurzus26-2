@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InventoryManager.Core;
+namespace InventoryManager.Core.Filtering;
 
-internal class Filtering
+internal class FilterForQP
 {
     public static int Filter(string input)
     {

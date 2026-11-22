@@ -6,12 +6,13 @@ namespace InventoryManager.Core;
 
 public class ReadFile
 {
-    
-    public static List<Product> Read(string path)
+    public static readonly string InventoryPath = Path.Combine(AppContext.BaseDirectory, "inventory.csv");
+
+    public static List<Product> Read()
     {
         var products = new List<Product>();
 
-        foreach (string line in File.ReadAllLines(path))
+        foreach (string line in File.ReadAllLines(InventoryPath))
         {
             var parts = line.Split(';');
 

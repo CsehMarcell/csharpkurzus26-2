@@ -25,8 +25,7 @@ public static class Main
         }
         else if (result == 2)
         {
-            Console.WriteLine("Modifying products...");
-            // Call the method to modify products here
+            ModifyProduct.Modifyproduct();
         }
         else if (result == 3)
         {

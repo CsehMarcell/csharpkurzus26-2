@@ -9,7 +9,7 @@ public class Program
 {
     public static void Main()
     {
-        var products = ReadFile.Read("inventory.csv");
+        var products = ReadFile.Read();
 
         Entry.Start();
 

@@ -6,11 +6,11 @@ namespace InventoryManager.Core;
 
 public static class WriteFile
 {
-    public static void Write(List<Product> products)
+    public static void Write(List<Product> inventory)
     {
         var outputLines = new List<string>();
 
-        foreach (var product in products)
+        foreach (var product in inventory)
         {
             outputLines.Add($"{product.Name};{product.Id};{product.Quantity};{product.Price}");
         }

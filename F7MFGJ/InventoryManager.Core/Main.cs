@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+using InventoryManager.Core.Modify;
+
 namespace InventoryManager.Core;
 
 public static class Main
@@ -29,9 +31,22 @@ public static class Main
         }
         else if (result == 3)
         {
-            Console.WriteLine("Adding a product...");
-            // Call the method to add a product here
+            var newProduct = AddProduct.NewProduct();
+            var inventory = ReadFile.Read();
+
+            inventory.Add(newProduct);
+
+            WriteFile.Write(inventory);
+            Logger.WriteLog(new LogEntry(
+                DateTimeOffset.Now, 
+                newProduct.Id, 
+                $"Added new product: {newProduct.Name}", 
+                "None", 
+                AddProduct.ToString(newProduct)));
+
+            Main.CallMenu();
         }
+
         else if (result == 4)
         {
             Console.WriteLine("Removing a product...");

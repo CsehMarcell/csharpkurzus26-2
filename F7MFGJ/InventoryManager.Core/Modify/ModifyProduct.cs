@@ -11,10 +11,9 @@ public static class ModifyProduct
     public static void Modifyproduct()
     {
         ListInventory.ListAllProducts();
-        var result = FilterbyId.FilterById("ID of the product to modify: ");
+        var result = FilterbyId.FilterById("ID of the product to modify (Enter to exit): ");
         if (result == null)
         {
-            
             Main.CallMenu();
         }
         else
@@ -59,6 +58,7 @@ public static class ModifyProduct
             }
             else if (option == 0)
             {
+                Console.Clear();
                 Main.CallMenu();
             }
         }

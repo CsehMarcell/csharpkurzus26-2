@@ -35,4 +35,8 @@ public class Product
     {
         return $"{price}";
     }
+    public override string ToString()
+    {
+        return $"Name: {Name}, Quantity: {Quantity}, Price: {Price}";
+    }
 }

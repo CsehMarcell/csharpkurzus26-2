@@ -15,6 +15,7 @@ public static class InspectInventory
 
         if (result == 0)
         {
+            Console.Clear();
             Entry.Start();
         }
         else if (result == 1)

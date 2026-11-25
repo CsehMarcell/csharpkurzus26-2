@@ -9,9 +9,15 @@ internal class FilterbyId
     public static Product FilterById(string prompt)
     {
         Console.Write(prompt);
+        var ifNull = Console.ReadLine();
+        if (ifNull == "")
+        {
+            Console.Clear();
+            Main.CallMenu();
+        }
         try
         {
-            int? id = int.Parse(Console.ReadLine());
+            int? id = int.Parse(ifNull);
 
             Console.WriteLine();
             Console.WriteLine("Product with matching ID:");

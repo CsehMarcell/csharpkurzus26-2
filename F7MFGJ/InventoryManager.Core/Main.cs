@@ -22,6 +22,7 @@ public static class Main
         }
         else if (result == 1)
         {
+            Console.Clear();
             InspectInventory.CallMenu();
 
         }
@@ -32,30 +33,37 @@ public static class Main
         else if (result == 3)
         {
             var newProduct = AddProduct.NewProduct();
-            var inventory = ReadFile.Read();
-
-            inventory.Add(newProduct);
-
-            WriteFile.Write(inventory);
+            
             Logger.WriteLog(new LogEntry(
                 DateTimeOffset.Now, 
                 newProduct.Id, 
                 $"Added new product: {newProduct.Name}", 
                 "None", 
-                AddProduct.ToString(newProduct)));
+                newProduct.ToString()));
 
             Main.CallMenu();
         }
 
         else if (result == 4)
         {
-            Console.WriteLine("Removing a product...");
-            // Call the method to remove a product here
+            ListInventory.ListAllProducts();
+            var removedProduct = RemoveProduct.Remove();
+
+            if (removedProduct is not null)
+            {
+                Logger.WriteLog(new LogEntry(
+                    DateTimeOffset.Now,
+                    removedProduct.Id,
+                    $"Removed product: {removedProduct.Name}",
+                    removedProduct.ToString(),
+                    "None"));
+            }
+            Main.CallMenu();
         }
         else if (result == 5)
         {
-            Console.WriteLine("Viewing inventory logs...");
-            // Call the method to view inventory logs here
+            OpenLog.OpenLogFile();
+            Environment.Exit(0);
         }
     }
 }
